@@ -158,9 +158,9 @@
 
 		<div id="config-tabs" class="viewswitch-cfgs hide">
 			<a id="lib-config-btn" class="btn" href="lib-config.php">Library</a>
-			<a id="snd-config-btn" class="btn" href="snd-config.php">Audio</a>
+			<!-- <a id="snd-config-btn" class="btn" href="snd-config.php">Audio</a> -->
 			<a id="net-config-btn" class="btn" href="net-config.php">Network</a>
-			<a id="sys-config-btn" class="btn" href="sys-config.php">System</a>
+			<!-- <a id="sys-config-btn" class="btn" href="sys-config.php">System</a> -->
 		</div>
 
 		<div id="menu-header"></div>
@@ -193,26 +193,27 @@
 
 		<!-- MAIN MENU -->
 		<div class="dropdown">
-			<a aria-label="Menu" class="dropdown-toggle btn" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="#notarget"><div id="mblur">mm</div><div id="mbrand">m</div></a>
+			<a aria-label="Menu" class="dropdown-toggle btn" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="#notarget" ><i class="fa fa-cog" aria-hidden="true" style="font-size:3rem;"></i></a>
+			<!-- <a aria-label="Menu" class="dropdown-toggle btn" id="menu-settings" role="button" data-toggle="dropdown" data-target="#" href="#notarget"><div id="mblur">mm</div><div id="mbrand">m</div></a> -->
 			<ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
 				<?php if ($section == 'index') { ?>
 					<li><a href="#configure-modal" data-toggle="modal"><i class="fas fa-cog sx"></i> Configure</a></li>
-					<li class="context-menu menu-separator"><a href="#notarget" data-cmd="preferences"><i class="fas fa-edit sx"></i> Preferences</a></li>
+					<!-- <li class="context-menu menu-separator"><a href="#notarget" data-cmd="preferences"><i class="fas fa-edit sx"></i> Preferences</a></li> -->
                     <li class="context-menu"><a href="#notarget" data-cmd="update_library"><i class="fas fa-sync sx"></i> Update library</a></li>
-					<li><a href="blu-config.php"><i class="fas fa-wifi sx"></i> BlueZ</a></li>
-					<li id="players-menu-item"><a href="javascript:$('#players-modal .modal-body').load('players.php',function(e){$('#players-modal').modal('show');}); void 0"><i class="fas fa-forward sx"></i> Players</a></li>
-                    <li><a href="javascript:audioPlayback()"><i class="fas fa-music sx"></i> Audio info</a></li>
-					<li id="playhistory-hide" class="context-menu"><a href="#notarget" data-cmd="viewplayhistory"><i class="fas fa-book sx"></i> Play history</a></li>
-					<li class="context-menu"><a href="#notarget" data-cmd="quickhelp"><i class="fas fa-info sx"></i> Quick help</a></li>
-					<li class="menu-separator"><a href="javascript:location.reload(true); void 0"><i class="fas fa-redo sx"></i> Refresh</a></li>
+					<!-- <li><a href="blu-config.php"><i class="fas fa-wifi sx"></i> BlueZ</a></li> -->
+					<!-- <li id="players-menu-item"><a href="javascript:$('#players-modal .modal-body').load('players.php',function(e){$('#players-modal').modal('show');}); void 0"><i class="fas fa-forward sx"></i> Players</a></li> -->
+                    <!-- <li><a href="javascript:audioPlayback()"><i class="fas fa-music sx"></i> Audio info</a></li> -->
+					<!-- <li id="playhistory-hide" class="context-menu"><a href="#notarget" data-cmd="viewplayhistory"><i class="fas fa-book sx"></i> Play history</a></li> -->
+					<!-- <li class="context-menu"><a href="#notarget" data-cmd="quickhelp"><i class="fas fa-info sx"></i> Quick help</a></li> -->
+					<!-- <li class="menu-separator"><a href="javascript:location.reload(true); void 0"><i class="fas fa-redo sx"></i> Refresh</a></li> -->
 					<li><a href="#power-modal" data-toggle="modal"><i class="fas fa-power-off sx"></i> Power</a></li>
 				<?php } else { ?>
 					<li class="context-menu menu-separator"><a href="#configure-modal" data-toggle="modal"><i class="fas fa-cog sx"></i> Configure</a></li>
-                    <li><a href="javascript:audioPlayback()"><i class="fas fa-music sx"></i> Audio info</a></li>
-					<li id="sysinfo-menu-item"><a href="javascript:$('#sysinfo-modal .modal-body').load('sysinfo.php',function(e){$('#sysinfo-modal').modal('show');}); void 0"><i class="fas fa-file-alt sx"></i> System info</a></li>
-                    <li class="context-menu"><a href="#notarget" data-cmd="quickhelp"><i class="fas fa-info sx"></i> Quick help</a></li>
-					<li class="context-menu menu-separator"><a href="#notarget" data-cmd="aboutmoode"><i class="fas fa-info sx"></i> About</a></li>
-					<li><a href="javascript:location.reload(true); void 0"><i class="fas fa-redo sx"></i> Refresh</a></li>
+                    <!-- <li><a href="javascript:audioPlayback()"><i class="fas fa-music sx"></i> Audio info</a></li> -->
+					<!-- <li id="sysinfo-menu-item"><a href="javascript:$('#sysinfo-modal .modal-body').load('sysinfo.php',function(e){$('#sysinfo-modal').modal('show');}); void 0"><i class="fas fa-file-alt sx"></i> System info</a></li> -->
+                    <!-- <li class="context-menu"><a href="#notarget" data-cmd="quickhelp"><i class="fas fa-info sx"></i> Quick help</a></li> -->
+					<!-- <li class="context-menu menu-separator"><a href="#notarget" data-cmd="aboutmoode"><i class="fas fa-info sx"></i> About</a></li> -->
+					<!-- <li><a href="javascript:location.reload(true); void 0"><i class="fas fa-redo sx"></i> Refresh</a></li> -->
 					<li><a href="#power-modal" data-toggle="modal"><i class="fas fa-power-off sx"></i> Power</a></li>
 				<?php } ?>
 			</ul>
@@ -232,6 +233,8 @@
 				<button aria-label="Previous" class="btn btn-cmd prev"><i class="fas fa-step-backward"></i></button>
 				<button aria-label="Play / Pause" class="btn btn-cmd play"><i class="fas fa-play"></i></button>
 				<button aria-label="Next" class="btn btn-cmd next"><i class="fas fa-step-forward"></i></button>
+				<a class="btn btn-infot" href="snd-config.php" data-toggle="modal"> <i class="fa fa-sliders-v-square" aria-hidden="true"></i></a>
+				<a class="btn btn-infot" href="#power-modal" data-toggle="modal"> <i class="fa fa-power-off" aria-hidden="true"></i></a>
 			</div>
             <div id="playbar-title">
 				<div id="playbar-currentsong"></div>
@@ -257,13 +260,13 @@
 				</div>
 			</div>
 			<div id="playbar-toggles">
-				<button aria-label="Context Menu" class="btn playback-context-menu" data-toggle="context" data-target="#context-menu-playback" class="btn btn-cmd"><i class="far fa-ellipsis-h"></i></button>
+				<!-- <button aria-label="Context Menu" class="btn playback-context-menu" data-toggle="context" data-target="#context-menu-playback" class="btn btn-cmd"><i class="far fa-ellipsis-h"></i></button>
 				<button aria-label="Random" class="btn btn-cmd btn-toggle random" data-cmd="random"><i class="fal fa-random"></i></button>
-                <button aria-label="Queue" class="btn btn-cmd btn-toggle hide" id="cv-playqueue-btn"><i class="fal fa-list"></i></button>
-				<button aria-label="Cover View" class="btn btn-cmd coverview"><i class="fal fa-tv"></i></button>
+                <button aria-label="Queue" class="btn btn-cmd btn-toggle hide" id="cv-playqueue-btn"><i class="fal fa-list"></i></button>-->
+				<button aria-label="Cover View" class="btn btn-cmd coverview"><i class="fal fa-tv"></i></button> 
                 <button aria-label="Volume" id="playbar-volume-popup-btn" class="btn volume-popup-btn" data-toggle="modal"><i class="fas fa-volume-off"></i><span id="playbar-volume-level"></span></button>
-                <button aria-label="Random Album" id="random-album" class="btn btn-cmd hide"><i class="fal fa-dot-circle"></i></button>
-				<button aria-label="Add To Favorites" class="btn btn-cmd add-item-to-favorites hide"><i class="fal fa-heart"></i></button>
+                <!-- <button aria-label="Random Album" id="random-album" class="btn btn-cmd hide"><i class="fal fa-dot-circle"></i></button>
+				<button aria-label="Add To Favorites" class="btn btn-cmd add-item-to-favorites hide"><i class="fal fa-heart"></i></button> -->
 			</div>
 		</div>
 	</div>

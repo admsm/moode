@@ -61,17 +61,17 @@
 		<div id="configure">
 			<ul>
 				<li><a href="lib-config.php" class="btn btn-large"><i class="fas fa-database"></i><br>Library</a></li>
-				<li><a href="snd-config.php" class="btn btn-large"><i class="fas fa-volume-up"></i><br>Audio</a></li>
+				<!-- <li><a href="snd-config.php" class="btn btn-large"><i class="fas fa-volume-up"></i><br>Audio</a></li> -->
 				<li><a href="net-config.php" class="btn btn-large"><i class="fas fa-sitemap"></i><br>Network</a></li>
-				<li><a href="sys-config.php" class="btn btn-large"><i class="fas fa-desktop-alt"></i><br>System</a></li>
-				<li><a href="mpd-config.php" class="btn btn-large"><i class="fas fa-play"></i><br>MPD</a></li>
-				<li><a href="cdsp-config.php" class="btn btn-large"><i class="fas fa-sliders-v-square"></i><br>CamillaDSP</a></li>
+				<!-- <li><a href="sys-config.php" class="btn btn-large"><i class="fas fa-desktop-alt"></i><br>System</a></li> -->
+				<!-- <li><a href="mpd-config.php" class="btn btn-large"><i class="fas fa-play"></i><br>MPD</a></li> -->
+				<!-- <li><a href="cdsp-config.php" class="btn btn-large"><i class="fas fa-sliders-v-square"></i><br>CamillaDSP</a></li> -->
 				<?php if ($_SESSION['feat_bitmask'] & FEAT_MULTIROOM) { ?>
-					<li><a href="trx-config.php" class="btn btn-large"><i class="fas fas fa-rss"></i><br>Multiroom</a></li>
+					<!-- <li><a href="trx-config.php" class="btn btn-large"><i class="fas fas fa-rss"></i><br>Multiroom</a></li> -->
 				<?php } ?>
 				<li class="context-menu"><a href="#notarget" class="btn btn-large" data-cmd="setforclockradio-m"><i class="fas fa-alarm-clock"></i><br>Clock radio</a></li>
 				<?php if ($_SESSION['feat_bitmask'] & FEAT_INPSOURCE) { ?>
-					<li><a href="inp-config.php" class="btn btn-large"><i class="far fa-scrubber"></i><br>Input source</a></li>
+					<!-- <li><a href="inp-config.php" class="btn btn-large"><i class="far fa-scrubber"></i><br>Input source</a></li> -->
 				<?php } ?>
 			</ul>
 		</div>
@@ -135,15 +135,103 @@
 	</div>
 </div>
 
-<!-- POWER -->
+<!-- EQUALIZER -->
+<div id="eq-modal" class="modal modal-sm2 hide" tabindex="-1" role="dialog" aria-labelledby="eq-modal-label" aria-hidden="true">
+		<legend id="equalizers">Equalizers</legend>
+		<p>
+			The Equalizers are supported by MPD and the Airplay and Spotify renderers.<br>
+			NOTE: The Equalizers, Crossfeed, and Polarity inversion are mutually exclusive. Enabling one will disable the SET button on the others.
+		</p><br>
+		<fieldset>
+			<div class="control-group">
+				<label class="control-label" for="eqfa12p">Parametric EQ</label>
+				<div class="controls">
+					<select id="eqfa12p" class="input-large" name="eqfa12p">
+						$_select[eqfa12p]
+					</select>
+					<button class="btn btn-primary btn-small set-button btn-submit" type="submit" name="update_eqfa12p" value="novalue" $_eqfa12p_set_disabled>Set</button>
+					<a aria-label="Help" class="info-toggle" data-cmd="info-eqp" href="#notarget"><i class="fas fa-info-circle"></i></a>
+					<span id="info-eqp" class="help-block-configs help-block-margin hide">
+						Three x Four Mitra-Regalia peaking equaliser filters in series; a vector arithmetic re-implementation of Fons Adriaensens "Parametric1" equaliser[fafil] with minor differences. Parallelisation of the serial filter organisation causes the output to lag by three samples. This EQ uses the @bitlab custom eqfa12p component of the CAPS suite of DSP programs written by Tim Goetze<br>
+						<b>Note:</b> Equalizer processing applies to MPD, Airplay and Spotify output.<br>
+                    </span>
+					<div style="margin-top:.5em">
+						<a href="eqp-config.php"><button class="btn btn-medium btn-primary">Edit</button></a>&nbsp;EQ curve<br>
+					</div>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="alsaequal">Graphic EQ</label>
+				<div class="controls">
+					<select id="alsaequal" class="input-large" name="alsaequal">
+						$_select[alsaequal]
+					</select>
+					<button class="btn btn-primary btn-small set-button btn-submit" type="submit" name="update_alsaequal" value="novalue" $_alsaequal_set_disabled>Set</button>
+					<a aria-label="Help" class="info-toggle" data-cmd="info-alsaequal" href="#notarget"><i class="fas fa-info-circle"></i></a>
+					<span id="info-alsaequal" class="help-block-configs help-block-margin hide">
+						A classic octave-band, constant-Q, second-order filter design. Frequency bands centered above Nyquist are automatically disabled. This EQ uses the Eq10X2 component of the CAPS suite of DSP programs written by Tim Goetze.<br>
+						<b>Note:</b> Equalizer processing applies to MPD, Airplay and Spotify output.<br>
+                    </span>
+					<div style="margin-top:.5em">
+						<a href="eqg-config.php"><button class="btn btn-medium btn-primary">Edit</button></a>&nbsp;EQ curve<br>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<label class="control-label" for="camilladsp">CamillaDSP</label>
+				<div class="controls">
+					<select id="camilladsp" class="input-large" name="camilladsp">
+						$_select[camilladsp]
+					</select>
+					<button class="btn btn-primary btn-small set-button btn-submit" type="submit" name="update_camilladsp" value="novalue" $_camilladsp_set_disabled>Set</button>
+					<a aria-label="Help" class="info-toggle" data-cmd="info-camilladsp" href="#notarget"><i class="fas fa-info-circle"></i></a>
+					<div id="info-camilladsp" class="help-block-configs help-block-margin hide">
+						CamillaDSP is a general purpose tool for routing and filtering sound. It can be used for example for building crossovers for active speakers, or for performing room correction. CamillaDSP was written by Henrik Enquist and integrated into moOde by @bitlab.<br>
+						Feature summary:<br>
+						- IIR filters (BiQuad)<br>
+						- FIR filters (Convolution via FFT)<br>
+						- Built-in sample rate converter<br>
+						- Filters can be chained freely<br>
+						- Flexible routing<br>
+						- Simple YAML configuration<br>
+						- All calculations done with 64-bit floats<br>
+						- ARM Neon 64-bit instruction set is used<br>
+						- Pipeline editor with expert mode
+						<br>
+						Configurations can be managed at the CamillaDSP settings page.<br>
+                    </div>
+					<div>
+						$camilladsp_config_check
+					</div>
+					<div style="margin-top:.5em">
+						<a href="cdsp-config.php"><button class="btn btn-medium btn-primary" $_camilladsp_set_disabled>Edit</button></a>&nbsp;&nbsp;CamillaDSP settings<br>
+					</div>
+				</div>
+			</div>
+
+		</fieldset>
+
+
+
+		<div class="modal-footer">
+			<button aria-label="Cancel" class="btn singleton" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		</div>
+	</div>
+
+
+
+	
+	<!-- POWER -->
 <div id="power-modal" class="modal modal-sm2 hide" tabindex="-1" role="dialog" aria-labelledby="power-modal-label" aria-hidden="true">
-	<div class="modal-header">
+	<!-- <div class="modal-header">
 		<button aria-label="Close" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		<h3 id="power-modal-label">Power Options</h3>
-	</div>
+	</div> -->
 	<div class="modal-body">
-		<button aria-label="Shutdown" id="system-shutdown" data-dismiss="modal" class="btn btn-primary btn-large btn-block">Shutdown</button>
-		<button aria-label="Restart" id="system-restart" data-dismiss="modal" class="btn btn-primary btn-large btn-block" style="margin-bottom:15px;">Restart</button>
+		<button aria-label="Shutdown" id="system-shutdown" data-dismiss="modal" class="btn btn-primary btn-large btn-block">Power Off</button>
+		<!-- <button aria-label="Restart" id="system-restart" data-dismiss="modal" class="btn btn-primary btn-large btn-block" style="margin-bottom:15px;">Restart</button> -->
 	</div>
 	<div class="modal-footer">
 		<button aria-label="Cancel" class="btn singleton" data-dismiss="modal" aria-hidden="true">Cancel</button>
@@ -153,19 +241,19 @@
 <!-- RECONNECT/RESTART/SHUTDOWN -->
 <div id="reconnect" class="hide">
 	<div class="reconnect-bg"></div>
-	<a href="javascript:location.reload(true); void 0" class="btn reconnect-btn">Reconnect</a>
+	<a href="javascript:location.reload(true); void 0" class="btn reconnect-btn">Power On</a>
 </div>
 
 <div id="restart" class="hide">
 	<div class="reconnect-bg"></div>
-	<a href="javascript:location.reload(true); void 0" class="btn reconnect-btn">Reconnect</a>
-	<span class="reconnect-msg">System restarted</span>
+	<a href="javascript:location.reload(true); void 0" class="btn reconnect-btn">Power On</a>
+	<span class="reconnect-msg">Powered On</span>
 </div>
 
 <div id="shutdown" class="hide">
 	<div class="reconnect-bg"></div>
-	<a href="javascript:location.reload(true); void 0" class="btn reconnect-btn">Reconnect</a>
-	<span class="reconnect-msg">System shut down</span>
+	<a href="javascript:location.reload(true); void 0" class="btn reconnect-btn">Power On</a>
+	<span class="reconnect-msg">Powered Off</span>
 </div>
 
 <?php

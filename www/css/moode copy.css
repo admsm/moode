@@ -76,7 +76,7 @@ h6 {font-size: large;font-weight: 500;text-transform: capitalize;text-align: cen
 .bootstrap-select.select-large2:not([class*="span"]) {width: 282px;}
 .bootstrap-select.select-large3:not([class*="span"]) {width: 350px;}
 /* stuff */
-#playback-queue {width:30%;}
+#playback-queue {width:38%;}
 #playback-cover {padding:0;width:38%;}
 #playback-controls {width:24%;margin-left:0px;}
 #playback-panel.newui #playback-queue, #playback-panel.cv #playback-queue {position:relative;width:44%;left:-10000px;;margin:0 auto;}
@@ -236,7 +236,7 @@ li.modal-dropdown-text:focus {color:#eee;}
 	#timeline {display:block;width:74vw;}
 	#mobile-time {display:block;}
 	.btn btn-cmd btn-toggle {font-size:.75em;}
-	img.coverart {width:40vh;height:auto;max-width:70vw;max-height:90vw;border:none;}
+	img.coverart {width:50vh;height:auto;max-width:90vw;max-height:90vw;border:none;}
 	#playback-firstuse-help {height:50vh;width:50vh;max-height:90vw;max-width:90vw;left:50%;transform:translate(-50%);}
 	img.libart {width:90%;}
 	.modal-sm2 {min-width:80%;}
@@ -318,9 +318,7 @@ li.modal-dropdown-text:focus {color:#eee;}
 	#playbar-title {text-align:left;top:0;margin-left:1em;width:67vw;height:auto;position:relative;transform:none;font-size:1.5em;line-height:2.2em;left:0;padding:0;text-shadow:0 0 1px var(--btnbarback);}
 	#playbar-controls {right:.25rem;transform:none;top:0;left:unset;opacity:1;}
 	#playbar-time, #playbar-total {line-height:1.5rem;}
-	
 	#playbar-controls .btn {padding:.5em;font-size:2.25rem;-webkit-tap-highlight-color:transparent;}
-
 	#playbar-toggles {position:absolute;right:1rem;right:calc(env(safe-area-inset-right) + 1rem);bottom:.4em;height:unset;width:unset;top:unset;left:unset;transform:none;}
 	#playbar-toggles .btn {transition:none;border-radius:50%;padding:1rem .7rem;margin-bottom:0;width:unset;height:unset;line-height:11px;}
 	#playbar-timeline {display:none;}
@@ -443,12 +441,8 @@ li.modal-dropdown-text:focus {color:#eee;}
 	.playqueue .playqueue-action {padding:1rem 0;}
 	#playbtns {margin:.25em 0;}
 	#playbar-title {font-size:1rem;}
-	#playbar-controls .btn {padding:.5em;font-size:3rem;-webkit-tap-highlight-color:transparent;}
-	img.coverart {width:35vh;}
+	img.coverart {width:55vh;}
 	#playback-firstuse-help {height:55vh;width:55vh;}
-
-	#menu-settings {font-size: calc(3.2em + 1vmin);}
-	#menu-settings i {font-size:3.5rem;}
 }
 @media (min-height:443px) and (width:799px) { /* 443 = Square pixel AR, 479 = Default pixel AR */
 	.playqueue .pll1 {font-size:1rem;}

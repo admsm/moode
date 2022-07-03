@@ -86,8 +86,8 @@ function notify(title, msg, duration = '2_seconds') {
 		settings_updated: 'Settings updated',
 		gathering_info: 'Gathering info...',
         discovering_players: 'Discovering players...',
-        restart: 'Restarting...',
-		shutdown: 'Shutting down...',
+        restart: 'Powering on...',
+		shutdown: 'Powering off...',
         mpderror: 'MPD error',
         viewport: 'Viewport',
         // Recorder
