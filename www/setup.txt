@@ -209,6 +209,8 @@ Below are a list of commands that can be submitted to moOde via http or ssh.
 
 HTTP examples:
 
+http://swar-6072d.local/?cmd=coverview.php on
+
 # Other
 http://moode/command/?cmd=get_currentsong
 {"file":"http:\/\/west-aac-64.streamthejazzgroove.com\/stream",

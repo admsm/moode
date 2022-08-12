@@ -45,6 +45,8 @@ if [[ $MPDMIXER == "software" || $MPDMIXER == "none" ]]; then
 fi
 /var/www/vol.sh -restore
 
+/home/pi/PeppyMeter/peppyOFF.sh
+
 # Multiroom receivers
 if [[ $MULTIROOM_TX == "On" ]]; then
 	for IP_ADDR in $RX_ADDRESSES; do

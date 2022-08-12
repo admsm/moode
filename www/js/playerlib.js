@@ -186,7 +186,7 @@ var toggleSongId = 'blank';
 var currentView = 'playback';
 var alphabitsFilter;
 var lastYIQ = ''; // Last yiq value from setColors
-var coverView = false; // Coverview shown/hidden to save on more expensive conditional in interval timer
+var coverView = true; // Coverview shown/hidden to save on more expensive conditional in interval timer
 
 function debugLog(msg) {
 	if (SESSION.json['debuglog'] == '1') {
@@ -1135,7 +1135,7 @@ function renderPlayqueue(state) {
 
 				if (typeof(data[i].Name) !== 'undefined' && data[i].file.substr(data[i].file.lastIndexOf('.') + 1).toLowerCase() == 'm4a') {
 	                // Line 1 title
-					output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
+					// output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
 	                output += '<span class="pll1">';
                     output += data[i].Name + '</span>';
 					// Line 2 artist, album
@@ -1153,12 +1153,12 @@ function renderPlayqueue(state) {
 	                // Line 1 title
 					// Custom name for particular station
 	                if (typeof(data[i].Title) === 'undefined' || data[i].Title.trim() == '' || data[i].file == 'http://stream.radioactive.fm') {
-						output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
+						// output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
 						output += '<span class="pll1">Streaming source</span>';
 					}
                     // Standard title
 					else {
-						output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
+						// output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
 						output += '<span class="pll1">' + data[i].Title + '</span>';
 						if (i == parseInt(MPD.json['song'])) { // active
 							// Update in case MPD did not get Title tag at initial play
@@ -1196,7 +1196,7 @@ function renderPlayqueue(state) {
 					var thumb = data[i].file.indexOf('/tidal/') != -1 ? 'images/default-cover-v6.png' : 'imagesw/thmcache/' + encodeURIComponent($.md5(data[i].file.substring(0,data[i].file.lastIndexOf('/')))) + '_sm.jpg';
 					output += showPlayqueueThumb ? '<span class="playqueue-thumb">' + playqueueLazy + '"' + thumb + '"/></span>' : '';
 	                // Line 1 title
-					output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
+					// output += '<span class="playqueue-action" data-toggle="context" data-target="#context-menu-playqueue-item">' + (typeof(data[i].Time) == 'undefined' ? '' : formatSongTime(data[i].Time)) + '<br><b>&hellip;</b></span>';
 	                output += '<span class="pll1">';
 					if (typeof(data[i].Title) === 'undefined') { // use file name
 						var pos = data[i].file.lastIndexOf('.');
@@ -2702,7 +2702,8 @@ $('#btn-preferences-update').click(function(e){
     var reloadLibrary = false
     var regenThumbsReqd = false;
 	var scnSaverTimeoutChange = false;
-    var autoCoverViewChange = false;
+    // var autoCoverViewChange = false;
+	var autoCoverViewChange = true;
 	var scnSaverStyleChange = false;
     var extraTagsChange = false;
     var playHistoryChange = false;

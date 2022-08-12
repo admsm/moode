@@ -8,7 +8,7 @@ BEGIN TRANSACTION;
 
 -- Table: cfg_sl
 CREATE TABLE cfg_sl (id INTEGER PRIMARY KEY, param CHAR (20), value CHAR (64));
-INSERT INTO cfg_sl (id, param, value) VALUES (1, 'PLAYERNAME', 'Moode');
+INSERT INTO cfg_sl (id, param, value) VALUES (1, 'PLAYERNAME', 'SWAR-6072D');
 INSERT INTO cfg_sl (id, param, value) VALUES (2, 'AUDIODEVICE', '0');
 INSERT INTO cfg_sl (id, param, value) VALUES (3, 'ALSAPARAMS', '80:4::1');
 INSERT INTO cfg_sl (id, param, value) VALUES (4, 'OUTPUTBUFFERS', '40000:100000');

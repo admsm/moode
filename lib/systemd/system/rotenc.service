@@ -1,5 +1,5 @@
 [Unit]
-Description=Moode Rotary Encoder Driver
+Description=SWAR-6072D Rotary Encoder Driver
 After=sound.target
 
 [Service]

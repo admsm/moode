@@ -43,6 +43,7 @@ jQuery(document).ready(function($) { 'use strict';
     // Resize thumbs on window resize
 	$(window).bind('resize', function(e){
 		UI.mobile = $(window).width() <= 480 ? true : false;
+		// UI.mobile = true;
 		getThumbHW();
 	});
 
@@ -84,6 +85,9 @@ jQuery(document).ready(function($) { 'use strict';
 
     	// Detect mobile
     	UI.mobile = $(window).width() < 480 ? true : false;
+
+		// UI.mobile = true;
+
         //console.log('window: ' + $(window).width() + 'x' + $(window).height());
         //console.log('viewport: ' + window.innerWidth + 'x' + window.innerHeight);
 

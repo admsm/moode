@@ -44,6 +44,11 @@ if [[ $ALSAVOLUME != "none" ]]; then
 	/var/www/util/sysutil.sh set-alsavol "$AMIXNAME" $ALSAVOLUME_MAX
 fi
 
+/home/pi/PeppyMeter/peppyON.sh
+
+
+echo "modififed"
+
 # Multiroom receivers
 if [[ $MULTIROOM_TX == "On" ]]; then
 	for IP_ADDR in $RX_ADDRESSES; do
@@ -56,3 +61,5 @@ if [[ $MULTIROOM_TX == "On" ]]; then
 		fi
 	done
 fi
+
+

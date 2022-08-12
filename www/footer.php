@@ -26,7 +26,7 @@
 	<div class="modal-body">
 		<button aria-label="Close" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		<p style="text-align:center;font-size:40px;font-weight:500;letter-spacing:-2px;margin-top:2px">m<span style="color:#d35400;line-height:12px">oO</span>de<span style="font-size:12px;position:relative;top:-15px;left:-3px;">™</span></p>
-			<p>Moode Audio Player is a derivative of the wonderful WebUI audio player client for MPD originally designed and coded by Andrea Coiutti and Simone De Gregori, and subsequently enhanced by early efforts from the RaspyFi/Volumio projects.</p>
+			<p>SWAR-6072D Audio Player is a derivative of the wonderful WebUI audio player client for MPD originally designed and coded by Andrea Coiutti and Simone De Gregori, and subsequently enhanced by early efforts from the RaspyFi/Volumio projects.</p>
 			<h4>Release Information</h4>
 			<ul>
 				<li>Release: 8.1.1 2022-06-24</li> <!-- NOTE: getMoodeRel() parses this  -->
@@ -69,7 +69,7 @@
 				<?php if ($_SESSION['feat_bitmask'] & FEAT_MULTIROOM) { ?>
 					<!-- <li><a href="trx-config.php" class="btn btn-large"><i class="fas fas fa-rss"></i><br>Multiroom</a></li> -->
 				<?php } ?>
-				<li class="context-menu"><a href="#notarget" class="btn btn-large" data-cmd="setforclockradio-m"><i class="fas fa-alarm-clock"></i><br>Clock radio</a></li>
+				<!-- <li class="context-menu"><a href="#notarget" class="btn btn-large" data-cmd="setforclockradio-m"><i class="fas fa-alarm-clock"></i><br>Clock radio</a></li> -->
 				<?php if ($_SESSION['feat_bitmask'] & FEAT_INPSOURCE) { ?>
 					<!-- <li><a href="inp-config.php" class="btn btn-large"><i class="far fa-scrubber"></i><br>Input source</a></li> -->
 				<?php } ?>
@@ -188,7 +188,7 @@
 					<button class="btn btn-primary btn-small set-button btn-submit" type="submit" name="update_camilladsp" value="novalue" $_camilladsp_set_disabled>Set</button>
 					<a aria-label="Help" class="info-toggle" data-cmd="info-camilladsp" href="#notarget"><i class="fas fa-info-circle"></i></a>
 					<div id="info-camilladsp" class="help-block-configs help-block-margin hide">
-						CamillaDSP is a general purpose tool for routing and filtering sound. It can be used for example for building crossovers for active speakers, or for performing room correction. CamillaDSP was written by Henrik Enquist and integrated into moOde by @bitlab.<br>
+						CamillaDSP is a general purpose tool for routing and filtering sound. It can be used for example for building crossovers for active speakers, or for performing room correction. CamillaDSP was written by Henrik Enquist and integrated into SWAR-6072D by @bitlab.<br>
 						Feature summary:<br>
 						- IIR filters (BiQuad)<br>
 						- FIR filters (Convolution via FFT)<br>

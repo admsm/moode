@@ -140,7 +140,7 @@
 	<!-- ALBUM COVER BACKDROP -->
 	<div aria-label="Album Cover Backdrop" id="cover-backdrop"></div>
 	<div id="context-backdrop"></div>
-	<div id="splash"><div>moOde</div></div>
+	<div id="splash"><div>SWAR-6072D</div></div>
 
     <!-- INPUT SOURCE INDICATOR -->
     <div id="inpsrc-indicator" class="inpsrc">
@@ -198,7 +198,7 @@
 			<ul class="dropdown-menu" role="menu" aria-labelledby="menu-settings">
 				<?php if ($section == 'index') { ?>
 					<li><a href="#configure-modal" data-toggle="modal"><i class="fas fa-cog sx"></i> Configure</a></li>
-					<!-- <li class="context-menu menu-separator"><a href="#notarget" data-cmd="preferences"><i class="fas fa-edit sx"></i> Preferences</a></li> -->
+					<li class="context-menu menu-separator"><a href="#notarget" data-cmd="preferences"><i class="fas fa-edit sx"></i> Preferences</a></li>
                     <li class="context-menu"><a href="#notarget" data-cmd="update_library"><i class="fas fa-sync sx"></i> Update library</a></li>
 					<!-- <li><a href="blu-config.php"><i class="fas fa-wifi sx"></i> BlueZ</a></li> -->
 					<!-- <li id="players-menu-item"><a href="javascript:$('#players-modal .modal-body').load('players.php',function(e){$('#players-modal').modal('show');}); void 0"><i class="fas fa-forward sx"></i> Players</a></li> -->
@@ -206,7 +206,7 @@
 					<!-- <li id="playhistory-hide" class="context-menu"><a href="#notarget" data-cmd="viewplayhistory"><i class="fas fa-book sx"></i> Play history</a></li> -->
 					<!-- <li class="context-menu"><a href="#notarget" data-cmd="quickhelp"><i class="fas fa-info sx"></i> Quick help</a></li> -->
 					<!-- <li class="menu-separator"><a href="javascript:location.reload(true); void 0"><i class="fas fa-redo sx"></i> Refresh</a></li> -->
-					<li><a href="#power-modal" data-toggle="modal"><i class="fas fa-power-off sx"></i> Power</a></li>
+					<!-- <li><a href="#power-modal" data-toggle="modal"><i class="fas fa-power-off sx"></i> Power</a></li> -->
 				<?php } else { ?>
 					<li class="context-menu menu-separator"><a href="#configure-modal" data-toggle="modal"><i class="fas fa-cog sx"></i> Configure</a></li>
                     <!-- <li><a href="javascript:audioPlayback()"><i class="fas fa-music sx"></i> Audio info</a></li> -->
@@ -214,7 +214,7 @@
                     <!-- <li class="context-menu"><a href="#notarget" data-cmd="quickhelp"><i class="fas fa-info sx"></i> Quick help</a></li> -->
 					<!-- <li class="context-menu menu-separator"><a href="#notarget" data-cmd="aboutmoode"><i class="fas fa-info sx"></i> About</a></li> -->
 					<!-- <li><a href="javascript:location.reload(true); void 0"><i class="fas fa-redo sx"></i> Refresh</a></li> -->
-					<li><a href="#power-modal" data-toggle="modal"><i class="fas fa-power-off sx"></i> Power</a></li>
+					<!-- <li><a href="#power-modal" data-toggle="modal"><i class="fas fa-power-off sx"></i> Power</a></li> -->
 				<?php } ?>
 			</ul>
 		</div>
@@ -233,8 +233,9 @@
 				<button aria-label="Previous" class="btn btn-cmd prev"><i class="fas fa-step-backward"></i></button>
 				<button aria-label="Play / Pause" class="btn btn-cmd play"><i class="fas fa-play"></i></button>
 				<button aria-label="Next" class="btn btn-cmd next"><i class="fas fa-step-forward"></i></button>
-				<a class="btn btn-infot" href="snd-config.php" data-toggle="modal"> <i class="fa fa-sliders-v-square" aria-hidden="true"></i></a>
-				<a class="btn btn-infot" href="#power-modal" data-toggle="modal"> <i class="fa fa-power-off" aria-hidden="true"></i></a>
+				<button aria-label="Power Off" class="btn btn-infot" id="system-shutdown"><i class="fas fa-power-off"></i></button>
+				<!-- <a class="btn btn-infot" href="snd-config.php" data-toggle="modal"> <i class="fa fa-sliders-v-square" aria-hidden="true"></i></a> -->
+				<!-- <a class="btn btn-infot" href="#power-modal" data-toggle="modal"> <i class="fa fa-power-off" aria-hidden="true"></i></a> -->
 			</div>
             <div id="playbar-title">
 				<div id="playbar-currentsong"></div>
