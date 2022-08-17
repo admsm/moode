@@ -45,7 +45,7 @@ if [[ $MPDMIXER == "software" || $MPDMIXER == "none" ]]; then
 fi
 /var/www/vol.sh -restore
 
-/home/pi/PeppyMeter/peppyOFF.sh
+sh /home/pi/PeppyMeter/peppyOFF.sh
 
 # Multiroom receivers
 if [[ $MULTIROOM_TX == "On" ]]; then

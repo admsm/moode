@@ -260,6 +260,7 @@ EOF
 echo "** Device $DEVICE connected"
 }
 
+
 # Print help to terminal
 HELP_TERM() {
 	echo "** blu-control.sh version $REV"

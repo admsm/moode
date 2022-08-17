@@ -45,7 +45,7 @@ html, body {background-attachment:fixed;background-size:cover;height:100%;color:
 	--shiftybg:rgba(0,0,0,0.85);
 	--pbfont:calc(0.45em + 1vmin);
 	--radiobadge:url('../images/radio-l.svg');
-	--defcover:'images/default-cover-v6-l.svg';
+	--defcover:'images/default-cover-v6.svg';
 	--thumbcols:0px;
 	--thumbimagesize:0px;
 	--thumbmargin:0px;
