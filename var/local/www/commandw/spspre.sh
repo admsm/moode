@@ -44,7 +44,7 @@ if [[ $ALSAVOLUME != "none" ]]; then
 	/var/www/util/sysutil.sh set-alsavol "$AMIXNAME" $ALSAVOLUME_MAX
 fi
 
-/home/pi/PeppyMeter/peppyON.sh
+sh /home/pi/PeppyMeter/peppyON.sh
 
 
 echo "modififed"
